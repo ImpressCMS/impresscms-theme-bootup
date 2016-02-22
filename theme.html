@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="<{$icms_langcode}>" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<head>
+    <meta charset="<{$icms_charset}>">
+    <!-- Set the viewport so this responsive site displays correctly on mobile devices -->
+    <meta name="robots" content="<{$icms_meta_robots}>" />
+    <meta name="keywords" content="<{$icms_meta_keywords}>" />
+    <meta name="rating" content="<{$icms_meta_rating}>" />
+    <meta name="author" content="<{$icms_meta_author}>" />
+    <meta name="copyright" content="<{$icms_meta_copyright}>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="dcterms.rightsHolder" content="<{$icms_meta_copyright}>">
+    <meta name="generator" content="ImpressCMS" />
+
+    <!--Social media tags from https://moz.com/blog/meta-data-templates-123 -->
+
+    <!-- Place this data between the <head> tags of your website -->
+    <title><{$icms_pagetitle}></title>
+    <meta name="description" content="<{$icms_meta_description}>" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="<{$icms_sitename}>">
+    <meta itemprop="description" content="<{$icms_meta_description}>">
+    <!--<meta itemprop="image" content="http://www.example.com/image.jpg">-->
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@impresscms_be">
+    <meta name="twitter:description" content="<{$icms_meta_description}>"/>
+    <meta name="twitter:title" content="<{$icms_pagetitle}>"/>
+    <meta name="twitter:domain" content="<{$icms_sitename}>"/>
+    <!-- Twitter summary card with large image must be at least 280x150px
+    <meta name="twitter:image:src" content="http://www.example.com/image.html"> -->
+
+    <!-- Open Graph data -->
+    <meta property="og:locale" content="<{$icms_langcode}>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<{$icms_pagetitle}>" />
+    <meta property="og:description" content="<{$icms_meta_description}>" />
+    <meta property="og:site_name" content="<{$icms_sitename}>" />
+    <meta property="fb:admins" content="Facebook numeric ID" />
+
+    <!-- Favicon information created by http://realfavicongenerator.net -->
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ff7f2a">
+
+    <!-- Include bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!--<link href="<{$icms_imageurl}>include/bootstrap.min.css" rel="stylesheet">-->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="<{$icms_imageurl}>include/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<!-- Site header and navigation -->
+<!-- ZONE HEADER -->
+<header class="top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="<{$icms_url}>"><{$icms_sitename}></a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+</header>
+
+
+    <div class="container">
+
+        <div>
+            <h1>Bootstrap starter template</h1>
+            <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        </div>
+
+    </div><!-- /.container -->
+
+
+
+    <div class="container">
+        <nav class="navbar-inverse navbar-default">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </button>
+                <a class="navbar-brand" href="<{$icms_url}>"><{$icms_sitename}></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-inverse" id="bs-example-navbar-collapse-1">
+                <{if $xoBlocks.menu_block_left}>
+                <ul class="nav navbar-nav navbar-inverse">
+                    <{foreach item=block from=$xoBlocks.menu_block_left}>
+                    <{$block.content}>
+                    <{/foreach}>
+                </ul><{/if}>
+                <{if $xoBlocks.menu_block_right}>
+                <ul>
+                    <li>
+                        <a class="btn btn-success" href="http://www.impresscms.org/modules/content/content.php?page=ImpressCMS-1_3_x" role="button">Download ImpressCMS
+                            1.3.8</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right navbar-inverse">
+
+                    <{foreach item=block from=$xoBlocks.menu_block_right}>
+                    <{$block.content}>
+                    <{/foreach}>
+                </ul><{/if}>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </div><!-- /.container-fluid -->
+</header>
+<!-- END ZONE HEADER -->
+<!-- Site banner -->
+<{if $xoBlocks.herozone}>
+<div id="herozone">
+    <{foreach item=block from=$xoBlocks.herozone}>
+    <{$block.content}>
+    <{/foreach}>
+</div>
+<{/if}>
+<!-- Message banner -->
+<{if $xoBlocks.message}>
+<{foreach item=block from=$xoBlocks.message}>
+<{$block.content}>
+<{/foreach}>
+<{/if}>
+
+<div class="container middle">
+    <div class="col-md-12 content">
+        <{if $xoBlocks.page_topcenter}>
+        <div class="xo-blockszone xo-lrcpageblocks" id="xo-page-topblocks">
+            <div id="blockzone">
+                <{foreach item=block from=$xoBlocks.page_topcenter}>
+                <{$block.content}>
+                <{/foreach}>
+            </div>
+        </div>
+        <{/if}>
+        <{if $icms_contents}>
+        <div id="xo-content"><{$icms_contents}></div>
+        <{/if}>
+        <!--
+                <h2>Use Twitter Bootstrap to create responsive designs for desktop, tablet & mobile</h2>
+                <p>Twitter bootstrap allows web developers and designers to quickly create attractive and responsive website templates. This tutorial provided by <a href="http://www.revillweb.com/">RevillWeb.com</a> will show you how to use Twitter Bootstrap 3 to create this responsive website template.</p>
+                <div class="to-tutorial">
+                    <p><strong>Visit the tutorial now to learn more:</strong></p>
+                    <a href="http://www.revillweb.com/tutorials/bootstrap-tutorial/" class="btn btn-success">TO THE TUTORIAL</a>
+                </div>
+        -->
+
+    </div>
+    <{if $xoBlocks.page_topright}>
+    <aside class="col-md-3 col-sx-6">
+        <div id="blockzone navbar">
+            <{foreach item=block from=$xoBlocks.page_topright}>
+            <{$block.content}>
+            <{/foreach}>
+        </div>
+        <!--
+        <h2>Resources</h2>
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="http://getbootstrap.com/" target="_blank">Download Twitter Bootstrap</a></li>
+            <li><a href="https://www.bootstrapresponsivethemes.com/" target="_blank">Bootstrap Responsive Themes</a></li>
+            <li><a href="http://amzn.to/1iO8NBg" target="_blank">UK: HTML & CSS: Design and Build Web Sites</a></li>
+            <li><a href="http://amzn.to/1lESKDp" target="_blank">UK: Bootstrap Site Blueprints</a></li>
+            <li><a href="http://amzn.to/1oXAbu6" target="_blank">US: HTML & CSS: Design and Build Web Sites</a></li>
+            <li><a href="http://amzn.to/1lESF2w" target="_blank">US: Bootstrap Site Blueprints</a></li>
+        </ul>
+        -->
+
+    </aside>
+    <{/if}>
+</div>
+</div>
+
+<!-- Site footer -->
+<div class="container bottom">
+    <{foreach item=block from=$xoBlocks.bottom_footer}>
+    <div class="col-md-4 col-sx-12 im-block <{if }>im-block-admin<{/if}>"
+         id="bottom_footer-<{$block
+                    .id}>">
+                            <span><i class="fa fa-cogs"></i>
+                            <{foreach item=menu_item from=$block.action_menu_items}>
+                                <a href=<{$menu_item.url}>><{$menu_item.action}></a>
+                            <{/foreach}> </span>
+        <h3><{$block.title}></h3>
+        <p>
+            <{$block.content}>
+        </p>
+    </div>
+
+    <{/foreach}>
+</div>
+
+<!-- Include jQuery and bootstrap JS plugins -->
+<script src="<{$icms_imageurl}>include/jquery.js"></script>
+<!--<script src="<{$icms_imageurl}>include/bootstrap.min.js"></script>-->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
+</html>
