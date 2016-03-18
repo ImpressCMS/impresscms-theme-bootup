@@ -1,310 +1,170 @@
 <!DOCTYPE html>
-<html lang="<{$icms_langcode}>">
+<html lang="<{$icms_langcode}>" itemscope="itemscope" itemtype="http://schema.org/WebPage">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Theme name -->
-    <{assign var=theme_name value=$xoTheme->folderName}>
-    <!-- Custom Smarty -->
-    <{includeq file="$theme_name/theme_functions.php"}>
-    <!-- Title and Meta -->
-    <title><{if $page_title !=''}><{$page_title}> : <{/if}><{$site_name}></title>
-    <meta http-equiv="content-type" content="text/html; charset=<{$charset}>">
-    <meta name="robots" content="<{$meta_robots}>">
-    <meta name="keywords" content="<{$meta_keywords}>">
-    <meta name="description" content="<{$meta_description}>">
-    <meta name="rating" content="<{$meta_rating}>">
-    <meta name="author" content="<{$meta_author}>">
-    <meta name="dcterms.rightsHolder" content="<{$icms_meta_copyright}>">
-    <meta name="generator" content="ImpressCMS">
+    <meta charset="<{$icms_charset}>">
+    <!-- Set the viewport so this responsive site displays correctly on mobile devices -->
+    <meta name="robots" content="<{$icms_meta_robots}>" />
+    <meta name="keywords" content="<{$icms_meta_keywords}>" />
+    <meta name="description" content="<{$icms_meta_description}>" />
+    <meta name="rating" content="<{$icms_meta_rating}>" />
+    <meta name="author" content="<{$icms_meta_author}>" />
+    <meta name="copyright" content="<{$icms_meta_copyright}>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="ImpressCMS" />
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/ico" href="<{$url}>/favicon.ico">
+    <!--Social media tags from https://moz.com/blog/meta-data-templates-123 -->
 
-    <!-- Core Scripts -->
-    <{$core_scripts}>
+    <!-- Place this data between the <head> tags of your website -->
+    <title><{$icms_pagetitle}></title>
+    <meta name="description" content="<{$icms_meta_description}>" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" media="screen" href="<{$image_url}>css/AdminLTE.css">
-    <link rel="stylesheet" href="<{$image_url}>css/skins/_all-skins.min.css">
-    <link rel="stylesheet" href="<{$image_url}>css/custom_admin.css">
-    <link href="<{$image_url}>css/iCheck/square/blue.css" rel="stylesheet">
-    <!--[if lt IE 8]>
-    <script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js" type="text/javascript"></script>
-    <![endif]-->
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="ImpressCMS Belgium">
+    <meta itemprop="description" content="<{$icms_meta_description}>">
+    <!--<meta itemprop="image" content="http://www.example.com/image.jpg">-->
 
-    <script src="<{$image_url}>js/cookie.js"></script>
-    <script src="<{$image_url}>js/app.js"></script>
-    <script src="<{$image_url}>js/icheck.min.js"></script>
-    <script src="<{$image_url}>js/bootstrap-filestyle.min.js"></script>
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="#insert_twitter_id#">
+    <meta name="twitter:description" content="<{$icms_meta_description}>"/>
+    <meta name="twitter:title" content="<{$icms_pagetitle}>"/>
+    <meta name="twitter:domain" content="<{$icms_sitename}>"/>
+    <!-- Twitter summary card with large image must be at least 280x150px
+    <meta name="twitter:image:src" content="http://www.example.com/image.html"> -->
 
-    <{literal}><script>
-    $(function() {
-        $('[data-toggle=tooltip]').tooltip();
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'icheckbox_square-blue'
-        });
-        $(":file").filestyle(
-                {buttonText: "<{/literal}>&nbsp;<{$smarty.const._SEARCH}><{literal}>"}
-        );
-    });
-</script><{/literal}>
+    <!-- Open Graph data -->
+    <meta property="og:locale" content="<{$icms_langcode}>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<{$icms_pagetitle}>" />
+    <meta property="og:description" content="<{$icms_meta_description}>" />
+    <meta property="og:site_name" content="<{$icms_sitename}>" />
+    <meta property="fb:admins" content="#Facebook numeric ID#" />
+
+    <!-- Include bootstrap CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="<{$icms_imageurl}>include/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
 </head>
-<body class="skin-blue wysihtml5-supported">
-<div class="wrapper">
-    <header class="main-header">
-        <{if $adm_left_logo == ''}>&nbsp;<{else}>
-        <{if  $adm_left_logo_url != ''}>
-        <a class="logo" href="<{$adm_left_logo_url}>" title="<{if $adm_left_logo_alt != ''}><{$adm_left_logo_alt}><{else}>ImpressCMS<{/if}>">
-            <{/if}>
-            <img src="<{$icms_url}><{$adm_left_logo}>" alt="<{if $adm_left_logo_alt != ''}><{$adm_left_logo_alt}><{else}>ImpressCMS<{/if}>"/>
-            <{if  $adm_left_logo_url != ''}>
-        </a>
-        <{/if}>
-        <{/if}>
+<!-- Site header and navigation -->
+<!-- ZONE HEADER -->
+<header class="top" role="header">
+    <!-- Navbar -->
+    <!-- begin wiredwiki example menu -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="<{$icms_url}>"><{$icms_sitename}></a>
+            </div>
 
-        <nav role="navigation" class="navbar navbar-static-top">
-            <!-- Sidebar toggle button-->
-            <a role="button" data-toggle="offcanvas" class="sidebar-toggle" href="#">
-                <span class="sr-only">Toggle navigation</span>
-            </a>
-            <div class="btn-toolbar topnavbar" role="toolbar">
-                <div class="btn-group topnavbar_buttons">
-                    <{foreach item=item from=$navitems}>
-                    <{foreach item=sub from=$item.menu}>
-                    <{if $item.id == 'cphome'}>
-                    <a href="<{if $sub.absolute==1}><{$sub.link}><{else}><{$icms_url}>/modules/<{$sub.dir}>/<{$sub.link}><{/if}>"
-                       data-toggle="tooltip" data-placement="bottom" title="<{$sub.title}>" class="btn btn-default">
-                        <{if $sub.title == $smarty.const._CPHOME}><i class="fa fa-cog fa-lg"></i> <{elseif $sub.title == $smarty.const._YOURHOME}><i class="fa fa-home fa-lg"></i> <{else}><i class="fa fa-sign-out fa-lg"></i> <{/if}>
-                    </a>
-                    <{/if}>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a
+                            href="#feedback"><span class="sr-only">(current)</span></a></li>
+                    <{foreach item=block from=$xoBlocks.menu_block_left}>
+                    <{$block.content}>
                     <{/foreach}>
-                    <{/foreach}>
-                    <a href="javascript:void(0);" class="btn btn-default FontSizeInc" data-placement="bottom" data-toggle="tooltip" title="<{$smarty.const.THEME_Aplus}>"><i class="fa fa-font fa-lg"></i>+</a>
-                    <a href="javascript:void(0);" class="FontSizeDec btn btn-default" data-placement="bottom" data-toggle="tooltip" title="<{$smarty.const.THEME_Amin}>"><i class="fa fa-font fa-lg"></i>-</a>
-                    <a href="javascript:void(0);" class="FontSizeReset btn btn-default" data-placement="bottom"  data-toggle="tooltip" title="<{$smarty.const.THEME_Aa}>"><i class="fa fa-font fa-lg"></i>a</a>
-                    <{if $ml_is_enabled}>
-                    <span class="btn btn-default" id="nav-change-language">[mlimg]</span>
-                    <{/if}>
-                </div>
-                <{includeq file="$theme_name/templates/user.html"}>
-            </div>
-        </nav>
-    </header>
+                </ul>
+                <a href="" class="btn btn-info navbar-btn navbar-right">Download Now</a>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!-- end wiredwiki example menu -->
 
-    <!-- Wrapper -->
-    <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar" style="height: auto;">
-            <{includeq file="$theme_name/adminnav.html"}>
-            <{if $xoBlocks.canvas_left_admin}>
-            <div>
-                <{foreach item=block from=$xoBlocks.canvas_left_admin}>
-                <div class="user-panel">
-                    <h4 class="block_title"><{$block.title}><{$block.edit}></h4>
-                    <div class="block_content"><{$block.content}></div>
-                </div>
-                <{/foreach}>
-            </div>
-            <{/if}>
-            <{if $xoBlocks.canvas_right_admin}>
-            <div>
-                <{foreach item=block from=$xoBlocks.canvas_right_admin}>
-                <div class="user-panel">
-                    <h4 class="block_title"><{$block.title}><{$block.edit}></h4>
-                    <div class="block_content"><{$block.content}></div>
-                </div>
-                <{/foreach}>
-            </div>
-            <{/if}>
-        </section>
-    </aside>
-
-    <{if $xoBlocks.canvas_left_admin || $xoBlocks.canvas_right_admin}><div class="content-wrapper"><{else}><div class="content-wrapper"><{/if}>
-    <section class="content-header">
-        <h1>Dashboard</h1>
-        <ol class="breadcrumb">
-            <li><a href="<{$icms_url}>/admin.php"><i class="fa fa-dashboard"></i> ACP Home</a></li> <span style="margin: 0px 4px;">&gt;</span> <{if $icms_dirname != 'system'}> <li><a href="../"><{$icms_dirname}></a></li> <{if $breadcrumb != ''}><span style="margin: 0px 4px;">&gt;</span> <strong><{$breadcrumb}></strong><{/if}><{else}><strong><{$icms_pagetitle}></strong><{/if}>
-        </ol>
-    </section>
-    <section class="content">
-        <{if $xoBlocks.page_topleft_admin or $xoBlocks.page_topcenter_admin or $xoBlocks.page_topright_admin}>
-        <{if $xoBlocks.page_topcenter_admin}>
-        <{foreach item=block from=$xoBlocks.page_topcenter_admin}>
-        <div class="row">
-            <section class="col-lg-12 connectedSortable ui-sortable">
-                <div class="box box-primary">
-                    <div class="box-header">
-                        <div class="pull-right box-tools"><button style="margin-right: 5px;" title="" data-toggle="tooltip" data-widget="collapse" class="btn btn-primary btn-sm pull-right" data-original-title="Collapse"><i class="fa fa-minus"></i></button></div>
-                        <h3 class="box-title"><{$block.title}><{$block.edit}></h3>
-                    </div>
-                    <div class="box-body"><{$block.content}></div>
-                    <div class="box-footer"></div>
-                </div>
-            </section>
-        </div>
-        <{/foreach}>
-        <{/if}>
-        <{if $xoBlocks.page_topleft_admin or $xoBlocks.page_topright_admin}>
-        <div class="row">
-            <{if $xoBlocks.page_topleft_admin}>
-            <{foreach item=block from=$xoBlocks.page_topleft_admin}>
-            <section class="col-lg-6 connectedSortable ui-sortable">
-                <div class="box box-primary">
-                    <div class="box-header">
-                        <div class="pull-right box-tools"><button style="margin-right: 5px;" title="" data-toggle="tooltip" data-widget="collapse" class="btn btn-primary btn-sm pull-right" data-original-title="Collapse"><i class="fa fa-minus"></i></button></div>
-                        <h3 class="box-title"><{$block.title}><{$block.edit}></h3>
-                    </div>
-                    <div class="box-body"><{$block.content}></div>
-                    <div class="box-footer"></div>
-                </div>
-            </section>
-            <{/foreach}>
-            <{/if}>
-            <{if $xoBlocks.page_topright_admin}>
-            <{foreach item=block from=$xoBlocks.page_topright_admin}>
-            <section class="col-lg-6 connectedSortable ui-sortable">
-                <div class="box box-primary">
-                    <div class="box-header">
-                        <div class="pull-right box-tools"><button style="margin-right: 5px;" title="" data-toggle="tooltip" data-widget="collapse" class="btn btn-primary btn-sm pull-right" data-original-title="Collapse"><i class="fa fa-minus"></i></button></div>
-                        <h3 class="box-title"><{$block.title}><{$block.edit}></h3>
-                    </div>
-                    <div class="box-body"><{$block.content}></div>
-                    <div class="box-footer"></div>
-                </div>
-            </section>
-            <{/foreach}>
-            <{/if}>
-        </div>
-        <{/if}>
-        <{/if}>
-        <!-- Page Content -->
-        <{if $main_content && $main_content != ''}>
-
-        <div class="row">
-            <section class="col-lg-12 connectedSortable ui-sortable">
-                <div class="box box-primary">
-                    <div class="box-header box-header2">
-                        <div class="pull-right box-tools"><button style="margin-right: 5px;" title="" data-toggle="tooltip" data-widget="collapse" class="btn btn-primary btn-sm pull-right" data-original-title="Collapse"><i class="fa fa-minus"></i></button></div>
-                    </div>
-                    <div class="box-body"><{$main_content}></div>
-                    <div class="box-footer"></div>
-                </div>
-            </section>
-        </div>
-
-        <{/if}>
-        <!-- Bottom Blocks -->
-        <{if $xoBlocks.page_bottomleft_admin or $xoBlocks.page_bottomcenter_admin or $xoBlocks.page_bottomright_admin}>
-        <div class="row">
-            <{if $xoBlocks.page_bottomleft_admin}>
-
-            <{foreach item=block from=$xoBlocks.page_bottomleft_admin}>
-            <section class="col-lg-4 connectedSortable ui-sortable">
-                <div class="box box-primary">
-                    <div class="box-header">
-                        <div class="pull-right box-tools"><button style="margin-right: 5px;" title="" data-toggle="tooltip" data-widget="collapse" class="btn btn-primary btn-sm pull-right" data-original-title="Collapse"><i class="fa fa-minus"></i></button></div>
-                        <h3 class="box-title"><{$block.title}><{$block.edit}></h3>
-                    </div>
-                    <div class="box-body"><{$block.content}></div>
-                    <div class="box-footer" ></div>
-                </div>
-            </section>
-            <{/foreach}>
-
-            <{/if}>
-            <{if $xoBlocks.page_bottomcenter_admin}>
-
-            <{foreach item=block from=$xoBlocks.page_bottomcenter_admin}>
-            <section class="col-lg-4 connectedSortable ui-sortable">
-                <div class="box box-primary">
-                    <div class="box-header">
-                        <div class="pull-right box-tools"><button style="margin-right: 5px;" title="" data-toggle="tooltip" data-widget="collapse" class="btn btn-primary btn-sm pull-right" data-original-title="Collapse"><i class="fa fa-minus"></i></button></div>
-                        <h3 class="box-title"><{$block.title}><{$block.edit}></h3>
-                    </div>
-                    <div class="box-body"><{$block.content}></div>
-                    <div class="box-footer"></div>
-                </div>
-            </section>
-            <{/foreach}>
-
-            <{/if}>
-            <{if $xoBlocks.page_bottomright_admin}>
-
-            <{foreach item=block from=$xoBlocks.page_bottomright_admin}>
-            <section class="col-lg-4 connectedSortable ui-sortable">
-                <div class="box box-primary">
-                    <div class="box-header">
-                        <div class="pull-right box-tools"><button style="margin-right: 5px;" title="" data-toggle="tooltip" data-widget="collapse" class="btn btn-primary btn-sm pull-right" data-original-title="Collapse"><i class="fa fa-minus"></i></button></div>
-                        <h3 class="box-title"><{$block.title}><{$block.edit}></h3>
-                    </div>
-                    <div class="box-body"><{$block.content}></div>
-                    <div class="box-footer"></div>
-                </div>
-            </section>
-            <{/foreach}>
-
-            <{/if}>
-        </div>
-        <{/if}>
-
-        <!-- End Leftside -->
-
-    </section>
+</header>
+<!-- END ZONE HEADER -->
+<!-- Site banner -->
+<{if $xoBlocks.herozone}>
+<div id="herozone">
+    <{foreach item=block from=$xoBlocks.herozone}>
+    <{$block.content}>
+    <{/foreach}>
 </div>
-    <footer class="main-footer">
-        <div class="hidden-xs">
-            <{$icms_footadm}>
+<{/if}>
+<!-- Message banner -->
+<{if $xoBlocks.message}>
+<{foreach item=block from=$xoBlocks.message}>
+<{$block.content}>
+<{/foreach}>
+<{/if}>
+
+<div class="container middle">
+    <content class="col-md-12 content">
+        <{if $xoBlocks.page_topcenter}>
+        <div class="xo-blockszone xo-lrcpageblocks" id="xo-page-topblocks">
+            <div id="blockzone">
+                <{foreach item=block from=$xoBlocks.page_topcenter}>
+                <{$block.content}>
+                <{/foreach}>
+            </div>
         </div>
-    </footer>
-</div><!-- End Page -->
-    <script>
-        var sitefunctions = {
-            textresize : function(){
-                // show text resizing links
-                $(".FontSize").show();
-                var $cookie_name = "<{$site_name}>-FontSize";
-                var originalFontSize = $("body").css("font-size");
-                // if exists load saved value, otherwise store it
-                if($.cookie($cookie_name)) {
-                    var $getSize = $.cookie($cookie_name);
-                    $("body").css({fontSize : $getSize + ($getSize.indexOf("px")!=-1 ? "" : "px")});
-                } else {
-                    $.cookie($cookie_name, originalFontSize);
-                }
-                // reset link
-                $(".FontSizeReset").bind("click", function() {
-                    $("body").css("font-size", originalFontSize);
-                    $.cookie($cookie_name, originalFontSize);
-                });
-                // text "+" link
-                $(".FontSizeInc").bind("click", function() {
-                    var currentFontSize = $("body").css("font-size");
-                    var currentFontSizeNum = parseFloat(currentFontSize, 10);
-                    var newFontSize = currentFontSizeNum*1.2;
-                    if (newFontSize, 11) {
-                        $("body").css("font-size", newFontSize);
-                        $.cookie($cookie_name, newFontSize);
-                    }
-                    return false;
-                });
-                $(".FontSizeDec").bind("click", function() {
-                    var currentFontSize = $("body").css("font-size");
-                    var currentFontSizeNum = parseFloat(currentFontSize, 10);
-                    var newFontSize = currentFontSizeNum*0.8;
-                    if (newFontSize, 11) {
-                        $("body").css("font-size", newFontSize);
-                        $.cookie($cookie_name, newFontSize);
-                    }
-                    return false;
-                });
-            }
-        }
-        $(document).ready(function(){
-            sitefunctions.textresize();
-        })
-    </script>
+        <{/if}>
+        <{if $icms_contents}>
+        <div id="xo-content"><{$icms_contents}></div>
+        <{/if}>
+        <!--
+                <h2>Use Twitter Bootstrap to create responsive designs for desktop, tablet & mobile</h2>
+                <p>Twitter bootstrap allows web developers and designers to quickly create attractive and responsive website templates. This tutorial provided by <a href="http://www.revillweb.com/">RevillWeb.com</a> will show you how to use Twitter Bootstrap 3 to create this responsive website template.</p>
+                <div class="to-tutorial">
+                    <p><strong>Visit the tutorial now to learn more:</strong></p>
+                    <a href="http://www.revillweb.com/tutorials/bootstrap-tutorial/" class="btn btn-success">TO THE TUTORIAL</a>
+                </div>
+        -->
+
+    </content>
+    <{if $xoBlocks.page_topright}>
+    <aside class="col-md-3 col-sx-6">
+        <div id="blockzone navbar">
+            <{foreach item=block from=$xoBlocks.page_topright}>
+            <{$block.content}>
+            <{/foreach}>
+        </div>
+        <!--
+        <h2>Resources</h2>
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="http://getbootstrap.com/" target="_blank">Download Twitter Bootstrap</a></li>
+            <li><a href="https://www.bootstrapresponsivethemes.com/" target="_blank">Bootstrap Responsive Themes</a></li>
+            <li><a href="http://amzn.to/1iO8NBg" target="_blank">UK: HTML & CSS: Design and Build Web Sites</a></li>
+            <li><a href="http://amzn.to/1lESKDp" target="_blank">UK: Bootstrap Site Blueprints</a></li>
+            <li><a href="http://amzn.to/1oXAbu6" target="_blank">US: HTML & CSS: Design and Build Web Sites</a></li>
+            <li><a href="http://amzn.to/1lESF2w" target="_blank">US: Bootstrap Site Blueprints</a></li>
+        </ul>
+        -->
+
+    </aside>
+    <{/if}>
+</div>
+</div>
+
+<!-- Site footer -->
+<div class="container bottom">
+    <{foreach item=block from=$xoBlocks.bottom_footer}>
+    <div class="col-md-4 col-sx-12 im-block" id="bottom_footer-<{$block.id}>">
+                            <span><i class="fa fa-cogs"></i>
+                            <{foreach item=menu_item from=$block.action_menu_items}>
+                                <a href=<{$menu_item.url}>><{$menu_item.action}></a>
+                            <{/foreach}> </span>
+        <h3><{$block.title}></h3>
+        <p>
+            <{$block.content}>
+        </p>
+    </div>
+
+    <{/foreach}>
+</div>
+
+<!-- Include jQuery and bootstrap JS plugins -->
+<script src="<{$icms_imageurl}>include/jquery.js"></script>
+<script src="<{$icms_imageurl}>include/bootstrap.min.js"></script>
+
 </body>
 </html>
