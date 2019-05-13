@@ -1,0 +1,13 @@
+// import bootstrap from vendor
+@import "bootstrap/bootstrap";
+
+@import "global/variables";
+@import "global/mixins";
+@import "global/global";
+@import "global/fonts";
+@import "components/buttons";
+@import "components/forms";
+@import "layouts/header";
+@import "layouts/footer";
+@import "layouts/pages";
+@import "layouts/home";

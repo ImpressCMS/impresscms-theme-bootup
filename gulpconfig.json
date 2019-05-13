@@ -1,0 +1,20 @@
+{
+  "paths" : {
+    "src" : {
+      "js": "./src/scripts/*.js",
+      "css": "./src/styles/**/*.scss",
+      "img": "./src/images/**",
+      "fonts": "./src/fonts/**",
+      "jquery": "./vendor/js/jquery/jquery.js",
+      "bootstrapjs": "./vendor/js/bootstrap4/bootstrap.bundle.js"
+    },
+    "dest": {
+      "js": "./dist/scripts",
+      "css": "./dist/styles",
+      "img": "./dist/images",
+      "fonts": "./dist/fonts"
+    },
+    "vendor": "./vendor",
+    "node": "./node_modules"
+  }
+}
