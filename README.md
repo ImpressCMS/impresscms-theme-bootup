@@ -56,3 +56,6 @@ gulp copy-assets
 
 GNU General Public License 3.0
 [GPL 3.0] https://www.gnu.org/licenses/gpl-3.0.en.html
+=======
+# impresscms-theme-bootup
+The base Twitter Bootstrap theme for ImpressCMS starting from ImpressCMS 1.3.10
