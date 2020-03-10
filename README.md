@@ -1,6 +1,6 @@
 ## HTML Boilerplate Starter Theme
 
-A modern, HTML starter theme. It comes out of the box with NPM, Gulp.js, Boostrap 4 and jQuery.
+A modern, HTML starter theme. It comes out of the box with NPM, Gulp.js, Bootstrap 4 and jQuery.
 
 ## Installation
 Just clone the repo and run npm install in the root to install all the dependencies.
